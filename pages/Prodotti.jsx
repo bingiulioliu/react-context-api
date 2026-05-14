@@ -3,13 +3,15 @@ import ProductCard from "../src/components/ProductCard";
 import SearchBar from "../src/components/SearchBar";
 import { fetchSingleProductData } from "../src/hooks/SingleProductFetch";
 import { useProducts } from "../src/hooks/useProducts";
+import { useContext } from "react";
+import { BudgetContext } from "../src/context/BudgetContext";
 
 
 
 function Prodotti() {
     
 
-    const { filter, filteredProducts, handleChange, categories } = useProducts();
+    const { filter, filteredProducts, handleChange, categories } = useContext(BudgetContext);
 
     if (filteredProducts.length === 0 && filter.search === '') {
         return <div className="container mt-5 text-center"><p>Caricamento prodotti...</p></div>;

@@ -16,9 +16,17 @@ export function BudgetProvider({children}){
         
     }
 
+    const poorProducts = filteredTemp.filter(product=>{
+        return isPoorMode? product.price < 30 : true;
+    })
+
     const value = {
         isPoorMode,
-        togglePoorMode
+        togglePoorMode,
+        filter,
+        handleChange,
+        categories,
+        filteredProducts : poorProducts // Sovrascrivo con la lista filtrata
     }
 
     return <>
