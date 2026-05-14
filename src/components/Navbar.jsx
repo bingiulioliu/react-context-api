@@ -28,7 +28,7 @@ function Navbar() {
                 <button 
                 className="btn btn-dark"
                 onClick={togglePoorMode}>
-                    {isPoorMode ? 'Attiva' : 'Disattiva'} Modalità Povero
+                    {isPoorMode ? 'Disattiva' : 'Attiva'} Modalità Povero
                 </button>
             </div>
         </nav>
