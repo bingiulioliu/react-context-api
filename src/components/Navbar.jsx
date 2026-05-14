@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router";
+import { BudgetContext } from "../context/BudgetContext";
+import { useContext } from "react";
 
 
 function Navbar() {
-
+    
+    const {isPoorMode, togglePoorMode } = useContext(BudgetContext) 
+    
     return <>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -18,8 +22,14 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink className='nav-link' to='/chi-siamo'>About Us</NavLink>
                         </li>
+                        
                     </ul>
                 </div>
+                <button 
+                className="btn btn-dark"
+                onClick={togglePoorMode}>
+                    {isPoorMode ? 'Attiva' : 'Disattiva'} Modalità Povero
+                </button>
             </div>
         </nav>
     </>
