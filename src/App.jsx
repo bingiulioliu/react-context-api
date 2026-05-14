@@ -7,22 +7,25 @@ import { useState, useEffect } from "react";
 import { useProducts } from "./hooks/useProducts";
 import NotFound from "../pages/NotFound";
 import Prodotto from "../pages/Prodotto";
+import { BudgetProvider } from "./context/BudgetContext";
 
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<PrimoLayout />}>
-          <Route path="/" element={<Homepage />} />
-          <Route path="chi-siamo" element={<ChiSiamo />} />
-          <Route path="prodotti" element={<Prodotti/>}/>
-          <Route path="prodotti/:productId" element={<Prodotto/>}/>
-          <Route path="*" element={<NotFound/>} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <BudgetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<PrimoLayout />}>
+            <Route path="/" element={<Homepage />} />
+            <Route path="chi-siamo" element={<ChiSiamo />} />
+            <Route path="prodotti" element={<Prodotti/>}/>
+            <Route path="prodotti/:productId" element={<Prodotto/>}/>
+            <Route path="*" element={<NotFound/>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </BudgetProvider>
   );
 }
 export default App;
