@@ -26,7 +26,7 @@ export function BudgetProvider({children}){
         filter,
         handleChange,
         categories,
-        filteredProducts : poorProducts // Sovrascrivo con la lista filtrata
+        filteredProducts : poorProducts // Sovrascrivo con la lista filtrata per evitare conflitti
     }
 
     return <>
